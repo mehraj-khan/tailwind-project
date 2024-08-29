@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>d
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAX Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" crossorigin href="/assets/index-BPhX1Owy.css">
+</head>
+
+<body>
+    <!-- HEADER SECTION -->
+    <div class="flex md:justify-around justify-between bg-[#0A0F12] text-white-500 py-6 sticky top-0 z-10 px-4">
+        <div>
+            <img src="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAAkCAYAAADLnKtyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4RERBMERDQzIwOTExRUNCMDJFODM2RDQ3RjkzOTdGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4RERBMEREQzIwOTExRUNCMDJFODM2RDQ3RjkzOTdGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RThEREEwREFDMjA5MTFFQ0IwMkU4MzZENDdGOTM5N0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RThEREEwREJDMjA5MTFFQ0IwMkU4MzZENDdGOTM5N0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5LUaDlAAAFm0lEQVR42uxcjZWiMBDO8myAFtgS2BJiCVwJWEIsQUuAErAEKWEtQUvQEjh4F/Y4V5Jv8it7znvzdFclIUwm33zJzFvXdcxA8l65fE3l+0fS9nrr9STfn1gYEb3uHFynla9Dvy+9HuT9PJOce80Unw/9fQ/Y7w4c17XBtYteG+B72173bDBuULNed71eO3M5y2tkhHZNVHT+pOmVe+4/qhzsswjYJ+GpTyloe2f5XYYadeXBSCqPRu7TuEc5joMYUY8Ep/KM/co9XPPL8STA8v7Za+lh+SrlkirYMoXL/ueR2s8UcPDRd8uAffsFwqBKwloEZiL3up9AyVnjTmXDO7BxGxnaOAZox4eksu9ZhLapTqEI2LfBsDdg7CYcfGeMi7bTfySKBxZypvPA7bk28CpCm4XBGIdcZQ5Sbb0y6t2/TabVzMVyw9l6msw2iiceflcHHPh2unzNeIuMMA5cahuo/6XhSleCHtWVbCZjqZJmhtER4DPYPmTiLAOxAeSXM4FhKj9rNNe4EgMLFwGlIDBEgsCihArYzhaBcPqkjE5j+LvjXNvTP3IipUehw1SMSxmBLaHSUDlIQ4UwltKS5RERWJ0d2Ldy4hiRCXxVMW4mVEtlMfv5XaerSFSg8GRU/AlotivweWjjHuzlk2CsKPVcqNpN7jCjTmqJo24WWPdDYqRtYPxnK7XcpdRRbr4Db91z2gPBaOjgHWVPKGSGNmBNCDRR68gYb/IB7NnypAUejk8pgAe+ByZhDGbqG1Vn4SAuiC0m4M3e2LK8rC+5RGwb2Yip715VbBCPcA975uZ8EYQeEsLOz+Vl21GlBCZeCxp36E2dqaC7lyraD6JcE5BHPLxs6wvz6lY4X5s2qNce+1EDkyXGzurFApKeKL9NgBs8vbz2FyzgwIPzhbVTzaSqFcb+bN57z+gbXmRojBr3S7Dz4b7GSne24tE58xPQH8HinemhwhMyXl8FDqKE5gE94wqRSsMuAMP2AUsKwAHViv9XmnsrWNijD/erDXoAjOw4VoFvaLcQ+JNOGAXEuHzGJTqsrcpwOjD9yU4RybhzRjvZOEzSD4oDScBO/ESI0Sn0yv5sJgjQsG+eDATB+QfLflHOhbuUymAsSL9JAHfP2Ut0YrNra4O1L4DxIpOujOBcTJxmQQmCE+ChpC8D1xqPD0hCpf9UE6AFjCYULciZXfZVhfY1YRglI142PBvB+9q5RbypDl6Nyh2152LCVqGukYBRPnqw6n+RwRsOVNbWYxuhHYppAoQXr+vC+yeE5a1hy8xz9CFr5nfXtoww1r5PC6J4Ga0No8XtFOMejyP+BAMfceic6gbXd85krHxSX+2iTMdJwjx0i119zcnh7oqQhWOaFhbqoL9tsoKImNHCu7hSPEkdkwb8zU6XrMAkfryBs/BTLgsZYbk7LyxQ1G0ooRz4Ury2r/bRmiP3Sb4ovTp7/be7WoGlwZJ7kEv5lHKa1hJEeck1c5c9rqsVuAWWPi5hmG4Z/XC8fOucQGs5TshpwHfmZrc4l46QAfe0NnwGI8z8vntpkczpWvgT5lA2geEJMva2JeiQXNAqQt6kbXJxo4IlU69Ws5egUM10t82ErXBxuKwG7kl3xBZdPZFx2Wju6XFNEoCNSRQNbgMaUcjyxlRWBYncXbAnCP3nin6sHUw0ax6a4bu7KP7+l0cnlmJwLeeF1C05B4AnZ2CsXI1P5rEyLLnUsON6LUe0ymsrgwuUSaF4xI289hIgELLFbgNPkCCvdjz+Oo9pWhkWre1HTVZAvfzfVcMgGGksvPTOQ+m0UEV5Gg/eiFJox3UZNE7xgo69q7BYFdBKVPnKAKvVkxkyFrzMZ7zDqKETEW4ausxkFdqCHikzjB9azWeuj9S20hO63HHOAJryxswThMc8SgTP578FGAC6twpQnvsYSQAAAABJRU5ErkJggg==" alt="logo image" class="w-[55%]">
+        </div>
+        <div class="text-white-500 hidden md:block lg:ps-[13rem] ps-6">
+            <a href="#home" class="px-6 text-base font-semibold hover:text-red-500 duration-500">Home</a>
+            <a href="#about" class="px-6 text-base font-semibold hover:text-red-500 duration-500">About</a>
+            <a href="#portfolio" class="px-6 text-base font-semibold hover:text-red-500 duration-500">Portfolio</a>
+            <a href="#news" class="px-6 text-base font-semibold hover:text-red-500 duration-500">News</a>
+            <a href="#contact" class="px-6 text-base font-semibold hover:text-red-500 duration-500">Contact</a>
+            </ul>
+        </div>
+        <div class="block md:hidden text-white-500 text-xl">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <header class="h-20 py-8 bg-cover z-10" style="background-image: url('/assets/hero-D2hma4eN.webp'); height: 100vh;" id="home">
+        <div class="text-white-500">
+            <div class="flex flex-col justify-center h-[80vh] lg:ps-[10rem] ps-0">
+                <div
+                    class="lg:text-7xl text-5xl font-extrabold lg:-tracking-[9px] pb-8 duration-200 lg:text-start text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <span>A</span>
+                    <span>l</span>
+                    <span>a</span>
+                    <span class="tracking-wider">n</span>
+                    <span>W</span>
+                    <span>a</span>
+                    <span>l</span>
+                    <span>k</span>
+                    <span>e</span>
+                    <span>r</span>
+                </div>
+                <div class="font-bold tracking-wider lg:text-start text-center" data-aos="fade-up" data-aos-duration="2000">
+                    <span>WEB</span>
+                    <span>&</span>
+                    <span>MOBILE</span>
+                    <span>APP</span>
+                    <span>DEVELOPMENT</span>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <main>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="flex lg:flex-row flex-col justify-around lg:py-36 py-20 md:px-[5.2rem] p-4">
+            <div class="aspect-square lg:h-[45vh] h-full drop-shadow-2xl hover:translate-x-[-3px] duration-500" data-aos="fade" data-aos-duration="1000">
+                <img src="/assets/about-q9xNeDA4.jpg" alt="about image" class="w-full h-auto">
+            </div>
+            <div class="lg:w-[60%] w-full lg:ps-10 my-auto lg:mt-0 mt-10 mb-0" data-aos="fade" data-aos-duration="1000">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-[.6rem]">ABOUT <span class="text-red-500">ME</span></h3>
+                    <p class="text-gray-500 leading-8 pt-8">
+                        Hello! I'm Alan Walker. I'm a web developer, and I'm very passionate and dedicated to my work.
+                        With
+                        20 years experience as a professional web developer, I have acquired the skills and knowledge
+                        necessary to make your project a success. I enjoy every step of the design process, from
+                        discussion
+                        and collaboration.
+                    </p>
+                    <div class="pt-8 sm:flex justify-between font-bold text-base">
+                        <div>
+                            <i class="fa-solid fa-angles-right mb-4 me-3"></i>Web Development <br>
+                            <i class="fa-solid fa-angles-right me-3"></i>Social Media Marketing
+                        </div>
+                        <div class="sm:mt-0 mt-4">
+                            <i class="fa-solid fa-angles-right mb-4 me-3"></i>Search Engine Optimization <br>
+                            <i class="fa-solid fa-angles-right me-3"></i>Content Generation
+                        </div>
+                    </div>
+                    <button
+                        class="text-white-500 bg-red-500 px-8 py-3 rounded-lg text-sm tracking-[2px] mt-8 hover:bg-white-200 hover:border-2 hover:border-red-400 hover:text-gray-400 duration-300">DOWNLOAD
+                        CV</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK SECTION -->
+        <section id="portfolio" class="bg-white-200 lg:py-36 py-20 lg:px-[8.2rem] px-4">
+            <h3 class="text-3xl font-bold tracking-[.6rem]">SELECTED <span class="text-red-500">WORKS</span></h3>
+            <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 justify-around mt-16" data-aos="fade-up" data-aos-duration="1000">
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work1-IV0uf2nP.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work2-D3GgL8oQ.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work3-Cc-IYziv.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work4-a2QfRUDT.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work5-Bin2NmDi.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="relative">
+                        <div>
+                            <img src="/assets/work6-CR9WCe6b.jpg" alt="work image 1"
+                                class="w-full h-auto group-hover:opacity-0 duration-500 aspect-square">
+                        </div>
+                        <div
+                            class="absolute bottom-0 py-[1rem] px-[2rem] opacity-0 group-hover:opacity-100 duration-[400ms]">
+                            <p class="text-gray-500">Video</p>
+                            <h5 class="font-bold text-xl">Sweet Fruites</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT SECTION  -->
+        <section class="flex lg:flex-row flex-col justify-between lg:py-36 py-20 lg:px-[8rem] px-4">
+            <div class="lg:w-[50%] w-full" data-aos="fade" data-aos-duration="1000">
+                <h3 class="text-4xl font-bold leading-[3rem]">I have high skills in developing and programming</h3>
+                <p class="text-gray-500 mt-6 leading-7">I was doing everything in my power to provide me with all the
+                    experiences
+                    to provide cost-effective 
+                    and high quality products to satisfy  my customers all over the world</p>
+            </div>
+            <div class="lg:w-[40%] w-full my-auto lg:mt-0 mt-14" data-aos="fade" data-aos-duration="1000">
+                <div>
+                    <div class="flex justify-between mb-2 font-medium">
+                        <p>Web Development</p>
+                        <p>95%</p>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-red-500 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="py-6">
+                    <div class="flex justify-between mb-2 font-medium">
+                        <p>Brand Identity</p>
+                        <p>80%</p>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-red-500 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2 font-medium">
+                        <p>Logo Design</p>
+                        <p>90%</p>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-red-500 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVAILABLE SECTION -->
+        <section class="lg:flex justify-between lg:py-24 py-14 lg:px-44 px-10 bg-black text-white-500"
+            style="background-image: url('data:image/png;base64,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');">
+
+            <p class="text-4xl font-bold">I'm available for freelance work <span id="beforeDesign"></span></p>
+            <button class="buttonHover font-bold lg:mt-0 mt-10"><a href="#contact">Contact Me</a></button>
+
+        </section>
+
+        <!-- ACCORDION SECTION -->
+        <section class="my-20" id="team">
+            <h2 class="text-3xl font-extrabold text-center mb-12">Frequently asked questions</h2>
+
+            <div id="accordion-collapse" data-accordion="collapse" class="lg:w-[60%] w-full px-4 mx-auto">
+                <h2 id="accordion-collapse-heading-1">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500  border-b-2  rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500 dark:border-gray-500 dark:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white gap-3"
+                        data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>Can I use Landwind in open-source projects?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of
+                            interactive components built on top of Tailwind CSS including buttons, dropdowns, modals,
+                            navbars, and more.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
+                                href="/docs/getting-started/introduction/"
+                                class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start
+                            developing websites even faster with components on top of Tailwind CSS.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-2">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500  border-b-2  rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500 dark:border-gray-500 dark:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white gap-3"
+                        data-accordion-target="#accordion-collapse-body-2" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>Is there a Figma file available?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed
+                            using the Figma software so everything you see in the library has a design equivalent in our
+                            Figma file.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
+                                class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based
+                            on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500  border-b-2  rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500 dark:border-gray-500 dark:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>What are the differences between Landwind and Tailwind UI?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
+                            from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
+                            Another difference is that Flowbite relies on smaller and standalone components, whereas
+                            Tailwind UI offers sections of pages.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
+                            Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you
+                            from using the best of two worlds.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                            <li><a href="https://flowbite.com/pro/"
+                                    class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                            <li><a href="https://tailwindui.com/" rel="nofollow"
+                                    class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-4">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500  border-b-2  rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500 dark:border-gray-500 dark:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white gap-3"
+                        data-accordion-target="#accordion-collapse-body-4" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-4">
+                        <span>What about browser support?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-4">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
+                            from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
+                            Another difference is that Flowbite relies on smaller and standalone components, whereas
+                            Tailwind UI offers sections of pages.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
+                            Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you
+                            from using the best of two worlds.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                            <li><a href="https://flowbite.com/pro/"
+                                    class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                            <li><a href="https://tailwindui.com/" rel="nofollow"
+                                    class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS SECTION -->
+        <section class="bg-white-200 lg:py-36 py-20 lg:px-[7.5rem] px-4" id="news">
+            <h3 class="text-3xl font-bold tracking-[.6rem]">LATEST <span class="text-red-500">NEWS</span></h3>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                <div class="mt-20" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="overflow-hidden">
+                        <img src="/assets/news1-CNXVNDNn.png" alt="shoes image"
+                            class="transform hover:scale-125 transition duration-500">
+                    </div>
+                    <div>
+                        <h5 class="text-2xl font-semibold mt-6">Developers watch out for these burnout symptoms</h5>
+                        <p class="text-xs text-gray-400 font-medium mt-6">BY ALEX WATSON / 01 JANUARY 2022</p>
+                    </div>
+                </div>
+                <div class="mt-20" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="overflow-hidden">
+                        <img src="/assets/news2-j-1VWQED.png" alt="shoes image"
+                            class="transform hover:scale-125 transition duration-500">
+                    </div>
+                    <div>
+                        <h5 class="text-2xl font-semibold mt-6">Developers watch out for these burnout symptoms</h5>
+                        <p class="text-xs text-gray-400 font-medium mt-6">BY ALEX WATSON / 01 JANUARY 2022</p>
+                    </div>
+                </div>
+                <div class="mt-20" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="overflow-hidden">
+                        <img src="/assets/news3-BFCw2l8m.png" alt="shoes image"
+                            class="transform hover:scale-125 transition duration-500">
+                    </div>
+                    <div>
+                        <h5 class="text-2xl font-semibold mt-6">Developers watch out for these burnout symptoms</h5>
+                        <p class="text-xs text-gray-400 font-medium mt-6">BY ALEX WATSON / 01 JANUARY 2022</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="lg:py-36 py-20 lg:px-[8rem] px-4" id="contact">
+            <h3 class="text-3xl font-bold tracking-[.6rem]">GET IN <span class="text-red-500" data-aos="fadels" data-aos-duration="1000">TOUCH</span></h3>
+            <div class="flex md:flex-row flex-col justify-between  mt-[2.5rem]">
+                <div class="md:w-[40%] w-80%" data-aos="fade" data-aos-duration="1000">
+                    <p class="text-gray-400 text-base leading-7">Please fill out the form on this section to contact
+                        with me. Or call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday</p>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-solid fa-location-dot text-lg self-center"></i><span
+                            class="font-bold ms-3">Address:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">Brook 103, New York, USA</p>
+                    </div>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-solid fa-envelope text-lg self-center"></i><span
+                            class="font-bold ms-3">Email:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">nadeemhaider938@gmail.com</p>
+                    </div>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-solid fa-phone text-lg self-center"></i><span class="font-bold ms-3">Phone
+                            No:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">+92 3172935702</p>
+                    </div>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-solid fa-globe text-lg self-center"></i><span
+                            class="font-bold ms-3">Website:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">www.myaddress.com</p>
+                    </div>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-brands fa-twitter text-lg self-center"></i><span
+                            class="font-bold ms-3">Twitter:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">@twitternickname</p>
+                    </div>
+                    <div class="flex align-middle mt-8">
+                        <i class="fa-solid fa-facebook text-lg self-center"></i><span
+                            class="font-bold ms-3">Facebook:</span>
+                        <p class="text-gray-500 ms-8 buttonHover after:bg-black">@facebooknickname</p>
+                    </div>
+                </div>
+                <div class="md:w-[40%] w-80% md:mt-0 mt-16">
+                    <input type="text"
+                        class="bg-gray-50 border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:border-gray-500 w-full"
+                        placeholder="Name" data-aos="fade-up" data-aos-duration="500" required />
+
+                    <input type="text"
+                        class="bg-gray-50 border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:border-gray-500 w-full mt-7"
+                        placeholder="Emial" data-aos="fade-up" data-aos-duration="1000" required />
+
+                    <textarea rows="6"
+                        class="bg-gray-50 border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:border-gray-500 w-full mt-7"
+                        placeholder="Message" data-aos="fade-up" data-aos-duration="1500"></textarea>
+
+                    <button
+                        class="block w-full bg-red-500 text-white-500 px-20 py-4 rounded-lg mt-7 hover:bg-white-200 hover:border-2 hover:border-red-400 hover:text-gray-400 duration-300" data-aos="fade-up" data-aos-duration="2000">Send
+                        Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <section class="bg-black text-white-500 flex justify-around lg:py-28 py-14 relative ">
+        <div class="custom-shape-divider-top-1719299984">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <img src="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAAkCAYAAADLnKtyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4RERBMERDQzIwOTExRUNCMDJFODM2RDQ3RjkzOTdGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4RERBMEREQzIwOTExRUNCMDJFODM2RDQ3RjkzOTdGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RThEREEwREFDMjA5MTFFQ0IwMkU4MzZENDdGOTM5N0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RThEREEwREJDMjA5MTFFQ0IwMkU4MzZENDdGOTM5N0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5LUaDlAAAFm0lEQVR42uxcjZWiMBDO8myAFtgS2BJiCVwJWEIsQUuAErAEKWEtQUvQEjh4F/Y4V5Jv8it7znvzdFclIUwm33zJzFvXdcxA8l65fE3l+0fS9nrr9STfn1gYEb3uHFynla9Dvy+9HuT9PJOce80Unw/9fQ/Y7w4c17XBtYteG+B72173bDBuULNed71eO3M5y2tkhHZNVHT+pOmVe+4/qhzsswjYJ+GpTyloe2f5XYYadeXBSCqPRu7TuEc5joMYUY8Ep/KM/co9XPPL8STA8v7Za+lh+SrlkirYMoXL/ueR2s8UcPDRd8uAffsFwqBKwloEZiL3up9AyVnjTmXDO7BxGxnaOAZox4eksu9ZhLapTqEI2LfBsDdg7CYcfGeMi7bTfySKBxZypvPA7bk28CpCm4XBGIdcZQ5Sbb0y6t2/TabVzMVyw9l6msw2iiceflcHHPh2unzNeIuMMA5cahuo/6XhSleCHtWVbCZjqZJmhtER4DPYPmTiLAOxAeSXM4FhKj9rNNe4EgMLFwGlIDBEgsCihArYzhaBcPqkjE5j+LvjXNvTP3IipUehw1SMSxmBLaHSUDlIQ4UwltKS5RERWJ0d2Ldy4hiRCXxVMW4mVEtlMfv5XaerSFSg8GRU/AlotivweWjjHuzlk2CsKPVcqNpN7jCjTmqJo24WWPdDYqRtYPxnK7XcpdRRbr4Db91z2gPBaOjgHWVPKGSGNmBNCDRR68gYb/IB7NnypAUejk8pgAe+ByZhDGbqG1Vn4SAuiC0m4M3e2LK8rC+5RGwb2Yip715VbBCPcA975uZ8EYQeEsLOz+Vl21GlBCZeCxp36E2dqaC7lyraD6JcE5BHPLxs6wvz6lY4X5s2qNce+1EDkyXGzurFApKeKL9NgBs8vbz2FyzgwIPzhbVTzaSqFcb+bN57z+gbXmRojBr3S7Dz4b7GSne24tE58xPQH8HinemhwhMyXl8FDqKE5gE94wqRSsMuAMP2AUsKwAHViv9XmnsrWNijD/erDXoAjOw4VoFvaLcQ+JNOGAXEuHzGJTqsrcpwOjD9yU4RybhzRjvZOEzSD4oDScBO/ESI0Sn0yv5sJgjQsG+eDATB+QfLflHOhbuUymAsSL9JAHfP2Ut0YrNra4O1L4DxIpOujOBcTJxmQQmCE+ChpC8D1xqPD0hCpf9UE6AFjCYULciZXfZVhfY1YRglI142PBvB+9q5RbypDl6Nyh2152LCVqGukYBRPnqw6n+RwRsOVNbWYxuhHYppAoQXr+vC+yeE5a1hy8xz9CFr5nfXtoww1r5PC6J4Ga0No8XtFOMejyP+BAMfceic6gbXd85krHxSX+2iTMdJwjx0i119zcnh7oqQhWOaFhbqoL9tsoKImNHCu7hSPEkdkwb8zU6XrMAkfryBs/BTLgsZYbk7LyxQ1G0ooRz4Ury2r/bRmiP3Sb4ovTp7/be7WoGlwZJ7kEv5lHKa1hJEeck1c5c9rqsVuAWWPi5hmG4Z/XC8fOucQGs5TshpwHfmZrc4l46QAfe0NnwGI8z8vntpkczpWvgT5lA2geEJMva2JeiQXNAqQt6kbXJxo4IlU69Ws5egUM10t82ErXBxuKwG7kl3xBZdPZFx2Wju6XFNEoCNSRQNbgMaUcjyxlRWBYncXbAnCP3nin6sHUw0ax6a4bu7KP7+l0cnlmJwLeeF1C05B4AnZ2CsXI1P5rEyLLnUsON6LUe0ymsrgwuUSaF4xI289hIgELLFbgNPkCCvdjz+Oo9pWhkWre1HTVZAvfzfVcMgGGksvPTOQ+m0UEV5Gg/eiFJox3UZNE7xgo69q7BYFdBKVPnKAKvVkxkyFrzMZ7zDqKETEW4ausxkFdqCHikzjB9azWeuj9S20hO63HHOAJryxswThMc8SgTP578FGAC6twpQnvsYSQAAAABJRU5ErkJggg==" alt="logo image" class="w-[7%]">
+        <div>
+            <i class="fa-solid fa-phone text-lg self-center"></i>
+            <i class="fa-solid fa-globe text-lg self-center ms-4"></i>
+            <i class="fa-brands fa-twitter text-lg self-center ms-4"></i>
+            <i class="fa-solid fa-facebook text-lg self-center ms-4"></i>
+        </div>
+        <p>© COPYRIGHT 2022 BY MARKETIFY</p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            function setupAccordion(accordionId) {
+                const accordion = document.getElementById(accordionId);
+                const headers = accordion.querySelectorAll('button[data-accordion-target]');
+
+                headers.forEach(header => {
+                    header.addEventListener('click', function () {
+                        const targetId = this.getAttribute('data-accordion-target');
+                        const target = document.querySelector(targetId);
+                        const icon = this.querySelector('[data-accordion-icon]');
+
+                        // Toggle the current section
+                        const isHidden = target.classList.toggle('hidden');
+                        this.setAttribute('aria-expanded', !isHidden);
+                        icon.classList.toggle('rotate-180');
+
+                        // Close other sections
+                        headers.forEach(otherHeader => {
+                            if (otherHeader !== this) {
+                                const otherTargetId = otherHeader.getAttribute('data-accordion-target');
+                                const otherTarget = document.querySelector(otherTargetId);
+                                const otherIcon = otherHeader.querySelector('[data-accordion-icon]');
+
+                                otherTarget.classList.add('hidden');
+                                otherHeader.setAttribute('aria-expanded', false);
+                                otherIcon.classList.remove('rotate-180');
+                            }
+                        });
+                    });
+                });
+            }
+
+            setupAccordion('accordion-collapse');
+            // setupAccordion('accordion-collapse-2');
+
+        });
+
+    </script>
+</body>
+
+</html>
